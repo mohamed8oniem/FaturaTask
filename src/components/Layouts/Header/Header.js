@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <Navbar bg="" expand="lg">
       <Container>
-        
+
         <Navbar.Brand href="/">
           <img src={Logo} alt="" />
           <h3>Gifo</h3>
@@ -18,9 +18,9 @@ const Header = () => {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/Favourites">Favourites</Nav.Link>
             <Nav.Link href="/upload">Upload Gif</Nav.Link>
-            <Nav.Link href="/uploadList">Upload List</Nav.Link>
+            <Nav.Link href="/uploadList">My Uploads</Nav.Link>
           </Nav>
-        <UserDropDown />
+          <UserDropDown />
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -22,7 +22,11 @@ const Home = () => {
         setShowSpinner(false);
     }, [])
     useEffect(() => {
+        // Detect if we are in bottom of the page 
+        // if we are in the bottom show spinner and generate data 
+        //once we get data, hide the spinner 
         if (scrollPosition >= document.body.scrollHeight - window.innerHeight) {
+
             loading ? setShowSpinner(false) : setShowSpinner(true);
             setTimeout(() => {
                 getGifs();
@@ -30,12 +34,15 @@ const Home = () => {
         }
     }, [scrollPosition])
 
-
+    // get Gifs list from Api Endpoint 
     const getGifs = () => {
         axios.get(`${Base}/trending?api_key=${ApiKey}&limit=20&offset=${pageNum}`).then((res) => {
             setLoading(false);
+            // Update and bind the Data from the response 
             setData([...data, res.data.data]);
+            // Set the offset of page number 
             setPageNum(pageNum + 20);
+            // Stop the spinner 
             setShowSpinner(false);
 
         }).catch((err) => {
@@ -43,6 +50,7 @@ const Home = () => {
             setShowSpinner(false);
         })
     }
+    //get Trending Gifs and parse it to the Slick
     const getTrendingGifs = () => {
         axios.get(`${Base}/trending?api_key=${ApiKey}&limit=20&offset=40`).then((res) => {
             setLoading(false);
@@ -55,18 +63,16 @@ const Home = () => {
 
     return (
         <div>
-            {/* <Search /> */}
             <SearchBar />
             {trendingData.length > 0 ? (<TrendingSlider list={trendingData} loading={loading} />) : (<Spinner />)}
-            {/* {trendingData.length > 0 ? console.log(trendingData[0]) : (<Spinner />)} */}
             <h2 className='Title'>Beautiful Gifs</h2>
+            {/* 2D to 1D */}
             <GifList list={data?.flat()} loading={loading} customClassName={showSpinner ? true : false} />
             <div className="bottomSpinner">
                 {
                     showSpinner ? <Spinner /> : null
                 }
             </div>
-            {/* <button onClick={loadmore}> Load More ..</button> */}
         </div>
 
     )

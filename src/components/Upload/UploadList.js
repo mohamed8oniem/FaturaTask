@@ -16,10 +16,8 @@ class UploadList extends Component {
         axios
             .get(`http://api.giphy.com/v1/gifs?&api_key=${ApiKey}&ids=${ids}`)
             .then((response) => {
-                console.log(response.data.data)
                 this.setState({
                     gifs: response.data.data,
-
                 });
             });
     }

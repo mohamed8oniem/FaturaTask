@@ -6,9 +6,11 @@ import './_Favourites.scss'
 class Favourites extends Component {
     state = {
         gifs: [],
+        // Favs ids from localStorage 
         favorites: JSON.parse(localStorage.getItem('FavouritesGifs')) || [],
     };
     componentDidMount() {
+        // once the component mounted get Favs ids
         this.favorites()
     }
     favorites() {
@@ -16,7 +18,6 @@ class Favourites extends Component {
         axios
             .get(`http://api.giphy.com/v1/gifs?&api_key=${ApiKey}&ids=${ids}`)
             .then((response) => {
-                console.log(response.data.data)
                 this.setState({
                     gifs: response.data.data,
 
