@@ -1,3 +1,7 @@
+# About Myself
+
+I'm an engineer with a bachelor degree in computer engineering, I worked as a full-time front-end engineer with many companies (Remotely and based on location) dealing with many websites using WordPress CMS, I have a lot of experience using many websites builder like WP-bakery Elemntor, Avada Theme builder and many custom themes builder, convert tons of designs in PSD, Adobe XD And Figma to Real websites using HTML CSS Bootstrap And SCSS with organized code and Pixel perfect Conversion, Also I have been clone many websites too using CSS HTML Bootstrap and jQuery. Developed a dashboard using jQuery, Develop a web app using React.js, maintained and enhancement in Vue.js project and Angular .
+
 # Project Name
 
 Gifo
