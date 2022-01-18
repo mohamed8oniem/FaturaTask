@@ -1,0 +1,61 @@
+@import '../../../sassStyles/animations';
+.listGif {
+    &__wrapper {
+        margin-top: 40px;
+        ul {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 2rem;
+            @media (max-width:1240px) {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                li {
+                    margin-left: 2rem;
+                }
+            }
+            .ImageContainer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            li {
+                position: relative;
+                &:hover .itemControl {
+                    display: block;
+                }
+            }
+            .itemControl {
+                // display: none;
+                position: absolute;
+                right: 24px;
+                top: 4px;
+                button {
+                    border: unset;
+                    background-color: transparent;
+                    svg {
+                        fill: #fff;
+                        filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 1));
+                    }
+                    svg.added {
+                        fill: red;
+                        animation: heartbeat 1.6s ease-out infinite normal;
+                        // animation-duration: 0.7s;
+                    }
+                }
+            }
+            img {
+                border-radius: 8px;
+                border-radius: 8px;
+                box-shadow: 0rem 0rem 1rem #ffffff4d;
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+}
+
+.listGif.Spinner {
+    margin-bottom: 80px;
+}

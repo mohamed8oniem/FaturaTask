@@ -1,0 +1,33 @@
+.trending-gifs {
+    margin: 40px 0;
+    .widget-title {
+        color: #fff;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .slide-parent {
+        padding: 12px;
+        img {
+            border-radius: 8px;
+            box-shadow: 0rem 0rem 1rem #ffffff4d;
+            width: 200px;
+            height: 180px;
+        }
+    }
+    .ImageContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media(max-width:1024px) {
+        .slick-prev {
+            left: 0;
+            z-index: 111;
+        }
+        .slick-next {
+            right: 0;
+            z-index: 111;
+        }
+    }
+}

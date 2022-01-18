@@ -1,0 +1,45 @@
+.SearchForm {
+    &__wrapper {
+        margin-top: 20px;
+        form {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.2);
+        }
+    }
+    &__field {
+        width: 100%;
+        height: 52px;
+        padding-left: 15px;
+        border: unset;
+        border-radius: 8px;
+        &:focus {
+            outline: none;
+            box-shadow: unset;
+        }
+    }
+    .Search_btn {
+        button {
+            height: 100%;
+            width: 50px;
+            border: unset;
+            background-color: unset;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            background: #cb2b98;
+            //TODO Set Animation to change background color
+            transform: translateY(-50%);
+            // background-image: linear-gradient( 45deg, rgb(153, 51, 255) 0%, rgb(255, 102, 102) 50%, rgb(153, 51, 255) 100%);
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            svg {
+                fill: #fff;
+                width: auto;
+                height: 24px;
+            }
+        }
+    }
+}
