@@ -16,11 +16,10 @@ class Favourites extends Component {
     favorites() {
         const ids = this.state.favorites.reverse().join(',');
         axios
-            .get(`http://api.giphy.com/v1/gifs?&api_key=${ApiKey}&ids=${ids}`)
+            .get(`https://api.giphy.com/v1/gifs?&api_key=${ApiKey}&ids=${ids}`)
             .then((response) => {
                 this.setState({
                     gifs: response.data.data,
-
                 });
             });
     }

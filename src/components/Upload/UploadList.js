@@ -14,7 +14,7 @@ class UploadList extends Component {
     getUploads() {
         const ids = this.state.UploadList.reverse().join(',');
         axios
-            .get(`http://api.giphy.com/v1/gifs?&api_key=${ApiKey}&ids=${ids}`)
+            .get(`https://api.giphy.com/v1/gifs?&api_key=${ApiKey}&ids=${ids}`)
             .then((response) => {
                 this.setState({
                     gifs: response.data.data,
